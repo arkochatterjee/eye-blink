@@ -1,4 +1,5 @@
 import cv2
+from firebase import motiondetect
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascase-eye.xml')
@@ -25,6 +26,7 @@ while True:
 
         if(k==1):
             t="You are Blinking!",c
+            motiondetect("Blinked!")
             c=c+1
             print(t)
 
